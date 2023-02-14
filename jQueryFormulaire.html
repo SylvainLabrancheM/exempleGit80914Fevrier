@@ -1,65 +1,59 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>jQuery modifications</title>
   </head>
   <body>
-		<form method="get" id="formulaire" >
-		  Nom d'utilisateur
-		  <input type="text" id="nom"><br />
+    <form method="get" id="formulaire">
+      Nom d'utilisateur
+      <input type="text" id="nom" /><br />
 
-		  Mot de passe
-		  <input type="password" id="pass"><br />
+      Nom
+      <input type="text" id="name" /><br />
+      Prénom
+      <input type="text" id="prenom" /><br />
 
-		  Sexe 
-		  H <input type="radio" id="H" name="sexe" value="H">
-		  F <input type="radio" id="F" name="sexe" value="F"><br />
+      Mot de passe
+      <input type="password" id="pass" /><br />
 
-		  Fonction
-		  <select id="fonction">
-			<option value="etudiant">Etudiant</option>
-			<option value="ingenieur">Ingénieur</option>
-			<option value="enseignant">Enseignant</option>
-			<option value="retraite">Retraité</option>
-			<option value="autre">Autre</option>
-		  </select><br /><br />
+      Sexe H <input type="radio" id="H" name="sexe" value="H" /> F
+      <input type="radio" id="F" name="sexe" value="F" /><br />
 
-		  <input type="submit" id="envoyer" value="Envoyer">
-		  <input type="reset" id="annuler" value="Annuler">
-		</form> 
-		
-		<p id="resultNom"> Votre nom est : </p>
-		<p id="resultMDP"> Votre mot de passe est : </p>
-		<p id="resultSexe"> Votre sexe est : </p>
-		<p id="resultFonction"> Votre fonction est : </p>
+      Fonction
+      <select id="fonction">
+        <option value="etudiant">Etudiant</option>
+        <option value="ingenieur">Ingénieur</option>
+        <option value="enseignant">Enseignant</option>
+        <option value="retraite">Retraité</option>
+        <option value="autre">Autre</option></select
+      ><br /><br />
+
+      <input type="submit" id="envoyer" value="Envoyer" />
+      <input type="reset" id="annuler" value="Annuler" />
+    </form>
+
+    <p id="resultNom">Votre nom est :</p>
+    <p id="resultMDP">Votre mot de passe est :</p>
+    <p id="resultSexe">Votre sexe est :</p>
+    <p id="resultFonction">Votre fonction est :</p>
     <script src="scripts/jquery.js"></script>
-	
-	
-	
+
     <script>
-	
-	$(function() {
-		$('#fonction').val('retraite');
-			
-		$('#formulaire').submit( 
-			function(event) {
-				event.preventDefault();
-				alert("Vous avez soumis le formulaire");
-				console.log($('#nom').val());
-				
-				$('#resultNom').append($('input#nom').val());				
-				$('#resultMDP').append($('input#pass').val());
-				$('#resultSexe').append($('input[name="sexe"]:checked').val());
-				$('#resultFonction').append($('select#fonction').val());			
-				}
-		);
-		
+      $(function () {
+        $("#fonction").val("retraite");
 
-	});
+        $("#formulaire").submit(function (event) {
+          event.preventDefault();
+          alert("Vous avez soumis le formulaire");
+          console.log($("#nom").val());
 
-
-     </script>
-	  
+          $("#resultNom").append($("input#nom").val());
+          $("#resultMDP").append($("input#pass").val());
+          $("#resultSexe").append($('input[name="sexe"]:checked').val());
+          $("#resultFonction").append($("select#fonction").val());
+        });
+      });
+    </script>
   </body>
 </html>
